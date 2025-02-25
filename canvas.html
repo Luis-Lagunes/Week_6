@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="canvas" height="200" width="300"></canvas>
+    <script>
+        let canvas = document.getElementById('canvas');
+        let context = canvas.getContext('2d');
+        context.strokeStyle = "purple";
+        context.fillStyle = "yellow";
+        context.fillRect(20, 20, 100, 120);
+        context.strokeRect(20, 20, 100, 120);
+        context.strokeRect(150, 30, 100, 100)
+
+        context.beginPath();
+        context.moveTo(200, 300);
+        context.lineTo(200, 100);
+        context.stroke();
+
+        let gradient_h = context.createLinearGradient(0, 0, 300, 0);
+
+        gradient_h.addColorStop(0, "green");
+        gradient_h.addColorStop(0.5, "blue");
+        gradient_h.addColorStop(1, "purple");
+
+        context.fillStyle = gradient_h;
+        context.font = "30px Arial";
+        context.fillText("Hello World", 50, 50);
+        context.stroke();
+    </script>
+</body>
+</html>
